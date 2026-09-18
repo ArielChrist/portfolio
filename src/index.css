@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 96%;
+    --foreground: 216 68% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 216 68% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 68% 14%;
+    --primary: 216 68% 14%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 218 72% 53%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 18% 43%;
+    --accent: 215 92% 95%;
+    --accent-foreground: 218 72% 43%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 210 20% 96%;
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 218 72% 53%;
+    --success: 156 72% 48%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 216 68% 14%;
+    --sidebar-primary: 216 68% 14%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 92% 95%;
+    --sidebar-accent-foreground: 218 72% 43%;
+    --sidebar-border: 214 32% 88%;
+    --sidebar-ring: 218 72% 53%;
+    --navy-soft: 215 92% 95%;
+    --blue: 218 72% 53%;
+    --blue-foreground: 0 0% 100%;
+  }
+
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground antialiased; font-family: 'Manrope', sans-serif; }
+  ::selection { background: hsl(var(--primary) / .25); color: hsl(var(--foreground)); }
+}
+
+@layer components {
+  .font-display { font-family: 'Sora', sans-serif; letter-spacing: 0; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; letter-spacing: 0; }
+  .section-shell { @apply mx-auto max-w-6xl px-6 py-20 md:px-12 md:py-28; }
+  .section-label { @apply font-mono text-xs uppercase text-secondary; }
+  .section-title { @apply font-display text-3xl font-bold leading-tight sm:text-4xl md:text-5xl; }
+  .info-line { @apply flex items-center gap-3 border-t border-border pt-4 text-sm text-muted-foreground; }
+  .info-line svg { @apply h-4 w-4 text-secondary; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
