@@ -5,9 +5,10 @@ import {
   MapPin, Menu, Phone, X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import cvFr from "@/assets/cv-fr.pdf.asset.json";
-import cvEn from "@/assets/cv-en.pdf.asset.json";
+const cvFrUrl = `${import.meta.env.BASE_URL}cv-fr.pdf`;
+const cvEnUrl = `${import.meta.env.BASE_URL}cv-en.pdf`;
 import brainImage from "@/assets/project-brain.jpg";
+import profilImage from "@/assets/profil_pro.jpeg"
 import networkImage from "@/assets/project-network.jpg";
 import bigDataImage from "@/assets/project-bigdata.jpg";
 import cloudImage from "@/assets/project-cloud.jpg";
@@ -68,7 +69,7 @@ const Index = () => {
   const [language, setLanguage] = useState<Language>("fr");
   const [menuOpen, setMenuOpen] = useState(false);
   const t = content[language];
-  const cvUrl = language === "fr" ? cvFr.url : cvEn.url;
+  const cvUrl = language === "fr" ? cvFrUrl : cvEnUrl;
 
   useEffect(() => { document.documentElement.lang = language; }, [language]);
   const switchLanguage = (next: Language) => { setLanguage(next); setMenuOpen(false); };
@@ -99,7 +100,7 @@ const Index = () => {
             </div>
           </div>
           <div className="relative min-h-[150px] overflow-hidden bg-muted lg:col-span-5 lg:min-h-[250px]">
-            <img src="./src/assets/profil_pro.jpeg" alt="Portrait d’Ariel Christ Austhen" className="absolute inset-0 h-full w-full object-cover object-top grayscale transition duration-700 hover:grayscale-0" />
+            <img src={profilImage} alt="Portrait d’Ariel Christ Austhen" className="absolute inset-0 h-full w-full object-cover object-top grayscale transition duration-700 hover:grayscale-0" />
             <div className="absolute inset-x-0 bottom-0 bg-primary/90 px-7 py-6 text-primary-foreground backdrop-blur-sm"><p className="font-mono text-[10px] uppercase text-blue-foreground">{t.location}</p><p className="mt-2 font-display text-lg font-semibold">{t.available}</p></div>
           </div>
         </section>
