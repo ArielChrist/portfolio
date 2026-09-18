@@ -107,9 +107,9 @@ const Index = () => {
               <Button asChild variant="ghost" size="icon"><a href="https://www.linkedin.com/in/ariel-christ-austhen-ngato-8b9895290" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin /></a></Button>
             </div>
           </div>
-          <div className="relative min-h-[150px] overflow-hidden bg-muted lg:col-span-5 lg:min-h-[250px]">
+          <div className="relative min-h-[380px] sm:min-h-[420px] overflow-hidden bg-muted lg:col-span-5 lg:min-h-[250px]">
             <img src={profilImage} alt="Portrait d’Ariel Christ Austhen" className="absolute inset-0 h-full w-full object-cover object-top grayscale transition duration-700 hover:grayscale-0" />
-            <div className="absolute inset-x-0 bottom-0 bg-primary/90 px-7 py-6 text-primary-foreground backdrop-blur-sm"><p className="font-mono text-[10px] uppercase text-blue-foreground">{t.location}</p><p className="mt-2 font-display text-lg font-semibold">{t.available}</p></div>
+            <div className="absolute inset-x-0 bottom-0 bg-primary/90 px-5 py-4 sm:px-7 sm:py-6 text-primary-foreground backdrop-blur-sm"><p className="font-mono text-[10px] uppercase text-blue-foreground">{t.location}</p><p className="mt-2 font-display text-base sm:text-lg font-semibold">{t.available}</p></div>
           </div>
         </section>
 
